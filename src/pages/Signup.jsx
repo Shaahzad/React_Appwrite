@@ -1,19 +1,22 @@
-import { Account, ID } from 'appwrite'
 import React from 'react'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { account, ID } from '../Appwrite/Auth'
 
 const Signup = () => {
 const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')  
+const navigate = useNavigate()
       const Handlesignup = async () => {
    try {
-    const user = await Account.create(
+    const user = await account.create(
       ID.unique(), 
       email,
       password
   );
   setEmail('')
   setPassword('')
+  navigate('/login')
   console.log(user)
    } catch (error) {
     console.log(error)
