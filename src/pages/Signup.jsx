@@ -7,7 +7,7 @@ const Signup = () => {
 const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')  
 const navigate = useNavigate()
-      const Handlesignup = async () => {
+  const Handlesignup = async () => {
    try {
     const user = await account.create(
       ID.unique(), 
