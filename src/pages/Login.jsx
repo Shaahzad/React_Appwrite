@@ -9,8 +9,7 @@ const Login = () => {
   const loginHandler = async () => {
     try {
       const res = await account.createEmailPasswordSession(email, password)
-      console.log(res);      
-      navigate('/verify')
+      console.log(res)
     } catch (error) {
       console.log(error.message);
     }
