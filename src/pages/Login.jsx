@@ -10,6 +10,7 @@ const Login = () => {
     try {
       const res = await account.createEmailPasswordSession(email, password)
       console.log(res)
+      navigate('/home')
     } catch (error) {
       console.log(error.message);
     }
